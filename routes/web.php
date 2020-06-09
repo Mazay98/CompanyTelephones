@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CompanyController@index')->name('company.index');
+Route::resource('company', 'CompanyController')->except('index');
